@@ -1,6 +1,6 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "Ciencia abierta"
+author: "Zaraida Guarneros"
 date: "2024-06-30"
 categories: [news]
 ---

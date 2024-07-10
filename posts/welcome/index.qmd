@@ -1,5 +1,5 @@
 |                                                                                          |
-|-----|
+|------------------------------------------------------------------------|
 | itle: "Ciencia abierta" uthor: "Zaraida Guarneros" ate: "2024-06-30" ategories: \[news\] |
 | raft: false oc: true ot: true ss: styles ang: es                                         |
 | ormat: html: code-fold: true                                                             |

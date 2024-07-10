@@ -1,0 +1,269 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\theoremstyle{remark}
+\AtBeginDocument{\renewcommand*{\proofname}{Prueba}}
+\newtheorem*{remark}{Observación}
+\newtheorem*{solution}{Solución}
+\newtheorem{refremark}{Observación}[section]
+\newtheorem{refsolution}{Solución}[section]
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Ciencia abierta},
+  pdfauthor={Zaraida Guarneros},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Ciencia abierta}
+\author{Zaraida Guarneros}
+\date{2024-06-30}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\listoftables
+This is the first post in a Quarto blog. Welcome!
+
+\includegraphics{thumbnail.jpg}
+
+Since this post doesn't specify an explicit \texttt{image}, the first
+image in the post will be used in the listing page of posts.
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-note-color-frame, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, coltitle=black, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm]
+
+\#Ciencia ``En el contexto de los apremiantes desafíos planetarios y
+socioeconómicos, las soluciones sostenibles e innovadoras requieren
+esfuerzos científicos eficientes, transparentes y dinámicos, no solo de
+la comunidad científica, sino de toda la sociedad.''
+
+\end{tcolorbox}
+
+La Ciencia Abierta es la respuesta a la demanda de varios países para
+democratizar el acceso a la información y al conocimiento
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Advertencia}, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-warning-color-frame, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, coltitle=black, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm]
+
+Para asegurar que la ciencia beneficia realmente a las personas y al
+planeta y no deja a nadie atrás, es necesario transformar todo el
+proceso científico. La ciencia abierta es un movimiento que pretende
+hacer la ciencia más abierta, accesible, eficiente, democrática y
+transparente. Impulsada por los avances sin precedentes en nuestro mundo
+digital, la transición hacia la ciencia abierta permite que la
+información, los datos y los productos científicos sean más accesibles
+(acceso abierto) y se aprovechen de manera más fiable (datos abiertos)
+con la participación activa de todas las partes interesadas (apertura a
+la sociedad).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, colbacktitle=quarto-callout-important-color!10!white, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-important-color-frame, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, coltitle=black, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm]
+
+Al alentar a que la ciencia esté más conectada con las necesidades de la
+sociedad y promover la igualdad de oportunidades para todos
+(científicos, innovadores, encargados de la formulación de políticas y
+ciudadanos), la ciencia abierta puede marcar un punto de inflexión para
+hacer efectivo el derecho humano a la ciencia y reducir las diferencias
+en materia de ciencia, tecnología e innovación entre los países y dentro
+de ellos.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-tip-color-frame, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, coltitle=black, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm]
+
+¿Es usted científico, editor, encargado de política científica, o
+alguien interesado en ciencia abierta?
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Precaución}, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-caution-color-frame, colback=white, rightrule=.15mm, toprule=.15mm, bottomrule=.15mm, bottomtitle=1mm, coltitle=black, breakable, toptitle=1mm, titlerule=0mm, arc=.35mm, leftrule=.75mm]
+
+Durante los dos próximos años se buscarán aportes de todas las regiones
+y de todas las partes interesadas, mediante consultas en línea abiertas,
+reuniones regionales y temáticas y numerosos debates sobre las
+consecuencias, los beneficios y los desafíos de la ciencia abierta en
+todo el mundo.
+
+\end{tcolorbox}
+
+\subsection{reflexion}
+
+najdsakjfkjfd
+
+\subsection{pregunta}
+
+jdfjfdnvnf
+
+\begin{definition}[]\protect\hypertarget{def-definir}{}\label{def-definir}
+
+¿Es usted científico, editor, encargado de política científica, o
+alguien interesado en ciencia abierta?
+
+\end{definition}
+
+
+
+\end{document}

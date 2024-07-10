@@ -1,23 +1,9 @@
- ---
-title: "Ciencia abierta"
-author: "Zaraida Guarneros"
-date: "2024-06-30"
-categories: [news]
-
-draft: false
-toc: true
-lot: true
-css: styles
-lang: es
-
-format:
-  html:
-    code-fold: true
-  
-  
-bibliography: algo.bib
-csl: apa.csl
----
+|                                                                                          |
+|-----|
+| itle: "Ciencia abierta" uthor: "Zaraida Guarneros" ate: "2024-06-30" ategories: \[news\] |
+| raft: false oc: true ot: true ss: styles ang: es                                         |
+| ormat: html: code-fold: true                                                             |
+| ibliography: algo.bib sl: apa.csl                                                        |
 
 This is the first post in a Quarto blog. Welcome!
 
